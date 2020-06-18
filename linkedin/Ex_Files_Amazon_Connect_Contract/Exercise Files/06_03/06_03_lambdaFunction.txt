@@ -1,0 +1,25 @@
+
+import boto3
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('CUST_DB')
+
+def lambda_handler(event, context):
+    try:
+        ani = event['Details']['ContactData']['CustomerEndpoint']['Address']
+        response = table.get_item(
+            Key={
+                'e164': ani
+            },
+        
+            ProjectionExpression='firstName'
+        )
+        
+        return {
+            'firstName' : response['Item']['firstName'],
+            'result' : True
+        }
+    except:
+        return {
+            'result' : False
+        }

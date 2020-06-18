@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "collectMeterReadings",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "submit my meter readings",
+      "tell you about my usage",
+      "send in my readings",
+      "update my usage"
+    ],
+    "slots": [
+      {
+        "name": "elecReading",
+        "slotConstraint": "Required",
+        "slotType": "AMAZON.NUMBER",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "What is your electricity reading?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 2,
+        "sampleUtterances": []
+      }
+    ],
+    "slotTypes": []
+  }
+}

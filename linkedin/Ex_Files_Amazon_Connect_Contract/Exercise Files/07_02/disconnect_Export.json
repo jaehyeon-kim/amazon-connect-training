@@ -1,0 +1,20 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "disconnect",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "i want to leave",
+      "i've found a better deal"
+    ],
+    "slots": [],
+    "slotTypes": []
+  }
+}
